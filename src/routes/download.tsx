@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Download, Radio, Chrome } from "lucide-react";
+import streamerCompanionZip from "@/assets/BadChess_Streamer_Companion.zip.asset.json";
 
 export const Route = createFileRoute("/download")({
   head: () => ({
@@ -18,7 +19,8 @@ const extensions = [
     name: "Streamer Companion",
     tagline: "Your sidekick for streaming chess.com games.",
     version: "v1.0",
-    status: "Coming soon",
+    status: "Download",
+    href: streamerCompanionZip.url,
     icon: Radio,
   },
 ];
@@ -43,9 +45,9 @@ function DownloadPage() {
             </div>
             <h2 className="mt-6 text-2xl font-bold">{e.name}</h2>
             <p className="mt-2 text-muted-foreground">{e.tagline}</p>
-            <button disabled className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3 font-semibold text-primary-foreground opacity-70">
+            <a href={e.href} download="BadChess_Streamer_Companion.zip" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:shadow-glow">
               <Download className="h-4 w-4" /> {e.status}
-            </button>
+            </a>
           </div>
         ))}
         <div className="animate-rise flex flex-col justify-center rounded-3xl border border-dashed border-border p-8 text-muted-foreground [animation-delay:300ms]">
