@@ -68,8 +68,8 @@ function Index() {
         <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 md:p-14">
           <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/20 blur-3xl" />
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Our first extension</p>
-          <h2 className="mt-3 text-4xl font-extrabold md:text-5xl">Streamer Companion</h2>
-          <p className="mt-4 max-w-xl text-muted-foreground">A companion for chess.com streamers, built to make going live with your games smoother.</p>
+          <h2 className="mt-3 text-4xl font-extrabold md:text-5xl">Streamer  Companion</h2>
+          <p className="mt-4 max-w-xl text-muted-foreground">Allows streamers to hide there username or there opponents</p>
           <Link to="/download" className="mt-8 inline-flex items-center gap-2 font-semibold text-primary hover:underline">
             Get it now <ArrowRight className="h-4 w-4" />
           </Link>
