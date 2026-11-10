@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Download, Radio, Chrome, Crown } from "lucide-react";
-import streamerCompanionZip from "@/assets/BadChess_Streamer_Companion.zip.asset.json";
+
+// Replace this with your MediaFire download link
+const STREAMER_COMPANION_URL = "https://www.mediafire.com/file/your-file-id/BadChess_Streamer_Companion.zip/file";
 
 export const Route = createFileRoute("/download")({
   head: () => ({
@@ -20,7 +22,7 @@ const extensions = [
     tagline: "Your sidekick for streaming chess.com games.",
     version: "v1.0",
     status: "Download",
-    href: streamerCompanionZip.url,
+    href: STREAMER_COMPANION_URL,
     icon: Radio,
   },
   {
@@ -54,7 +56,7 @@ function DownloadPage() {
             <h2 className="mt-6 text-2xl font-bold">{e.name}</h2>
             <p className="mt-2 text-muted-foreground">{e.tagline}</p>
             {e.href ? (
-              <a href={e.href} download="BadChess_Streamer_Companion.zip" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:shadow-glow">
+              <a href={e.href} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:shadow-glow">
                 <Download className="h-4 w-4" /> {e.status}
               </a>
             ) : (

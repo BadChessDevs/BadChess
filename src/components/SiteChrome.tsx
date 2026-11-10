@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/badchess-logo.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -11,7 +10,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="group flex items-center gap-2.5">
-          <img src={logo.url} alt="BadChess logo" className="h-8 w-8 transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110" />
+          <img src="/badchess-logo.png" alt="BadChess logo" className="h-8 w-8 transition-transform duration-500 group-hover:-rotate-12 group-hover:scale-110" />
           <span className="font-[family-name:var(--font-display)] text-lg font-bold tracking-tight">
             Bad<span className="text-primary">Chess</span>
           </span>

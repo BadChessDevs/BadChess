@@ -1,7 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Radio, Sparkles, Zap, ArrowRight, Target, Gauge } from "lucide-react";
-import logo from "@/assets/badchess-logo.png.asset.json";
-import proBoard from "@/assets/badchess-pro-review-board.png.asset.json";
 
 const proFeatures = [
   { icon: Target, text: "Arrows and highlights show the stronger move on the board." },
@@ -53,7 +51,7 @@ function Index() {
           </div>
           <div className="relative flex justify-center">
             <div className="animate-pulse-glow absolute h-72 w-72 rounded-full bg-primary/30 blur-3xl" />
-            <img src={logo.url} alt="BadChess knight" className="animate-float relative w-64 drop-shadow-2xl md:w-80" />
+            <img src="/badchess-logo.png" alt="BadChess knight" className="animate-float relative w-64 drop-shadow-2xl md:w-80" />
           </div>
         </div>
       </section>
@@ -109,7 +107,7 @@ function Index() {
           </div>
           <div className="relative">
             <img
-              src={proBoard.url}
+              src="/badchess-pro-review-board.png"
               alt="Chessboard with a green arrow showing the best move found in review"
               className="w-full rounded-2xl border border-border shadow-2xl transition-transform duration-500 hover:-rotate-1 hover:scale-[1.02]"
             />
