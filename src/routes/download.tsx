@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Download, Radio, Chrome } from "lucide-react";
+import { Download, Radio, Chrome, Crown } from "lucide-react";
 import streamerCompanionZip from "@/assets/BadChess_Streamer_Companion.zip.asset.json";
 
 export const Route = createFileRoute("/download")({
@@ -23,6 +23,14 @@ const extensions = [
     href: streamerCompanionZip.url,
     icon: Radio,
   },
+  {
+    name: "BadChess Pro",
+    tagline: "Review your finished games and see the best move you missed.",
+    version: "New",
+    status: "Coming soon",
+    href: undefined,
+    icon: Crown,
+  },
 ];
 
 const steps = ["Download and unzip the file.", "Open chrome://extensions in Chrome.", "Turn on Developer mode (top right).", "Click Load unpacked and pick the folder."];
@@ -45,9 +53,15 @@ function DownloadPage() {
             </div>
             <h2 className="mt-6 text-2xl font-bold">{e.name}</h2>
             <p className="mt-2 text-muted-foreground">{e.tagline}</p>
-            <a href={e.href} download="BadChess_Streamer_Companion.zip" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:shadow-glow">
-              <Download className="h-4 w-4" /> {e.status}
-            </a>
+            {e.href ? (
+              <a href={e.href} download="BadChess_Streamer_Companion.zip" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3 font-semibold text-primary-foreground transition-all duration-300 hover:shadow-glow">
+                <Download className="h-4 w-4" /> {e.status}
+              </a>
+            ) : (
+              <span className="mt-8 inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-full border border-border bg-secondary px-6 py-3 font-semibold text-muted-foreground">
+                {e.status}
+              </span>
+            )}
           </div>
         ))}
         <div className="animate-rise flex flex-col justify-center rounded-3xl border border-dashed border-border p-8 text-muted-foreground [animation-delay:300ms]">
