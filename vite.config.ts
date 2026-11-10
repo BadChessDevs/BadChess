@@ -58,7 +58,7 @@ export default defineConfig({
     ignoreOutdatedRequests: true,
   },
   define: Object.fromEntries(
-    Object.entries(loadEnv(process.env.NODE_ENV ?? "production", process.cwd(), "VITE_")).map(
+    Object.entries(loadEnv(process.env["NODE_ENV"] ?? "production", process.cwd(), "VITE_")).map(
       ([key, value]) => [`import.meta.env.${key}`, JSON.stringify(value)]
     )
   ),
