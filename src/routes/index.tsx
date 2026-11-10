@@ -1,6 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Radio, Sparkles, Zap, ArrowRight } from "lucide-react";
+import { Radio, Sparkles, Zap, ArrowRight, Target, Gauge, History } from "lucide-react";
 import logo from "@/assets/badchess-logo.png.asset.json";
+import proBoard from "@/assets/badchess-pro-review-board.png.asset.json";
+
+const proFeatures = [
+  { icon: Target, text: "Arrows and highlights show the stronger move on the board." },
+  { icon: Gauge, text: "Choose how deep the engine looks." },
+  { icon: History, text: "Works on games you've already finished, never during play." },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -73,6 +80,41 @@ function Index() {
           <Link to="/download" className="mt-8 inline-flex items-center gap-2 font-semibold text-primary hover:underline">
             Get it now <ArrowRight className="h-4 w-4" />
           </Link>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-24">
+        <div className="relative grid items-center gap-10 overflow-hidden rounded-3xl border border-primary/40 bg-card p-10 shadow-glow md:grid-cols-2 md:p-14">
+          <div className="absolute -left-24 -bottom-24 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
+          <div className="relative">
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" /> New release
+            </span>
+            <h2 className="mt-4 text-4xl font-extrabold md:text-5xl">
+              BadChess <span className="text-gradient">Pro</span>
+            </h2>
+            <p className="mt-4 max-w-md text-lg text-muted-foreground">
+              Review your finished chess.com games with a strong engine. See the best move you missed, right after the game ends.
+            </p>
+            <ul className="mt-6 space-y-3">
+              {proFeatures.map((f) => (
+                <li key={f.text} className="flex items-start gap-3">
+                  <f.icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <span>{f.text}</span>
+                </li>
+              ))}
+            </ul>
+            <Link to="/download" className="group mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3 font-semibold text-primary-foreground transition-transform hover:scale-105">
+              See BadChess Pro <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+          <div className="relative">
+            <img
+              src={proBoard.url}
+              alt="Chessboard with a green arrow showing the best move found in review"
+              className="w-full rounded-2xl border border-border shadow-2xl transition-transform duration-500 hover:-rotate-1 hover:scale-[1.02]"
+            />
+          </div>
         </div>
       </section>
     </main>
