@@ -1,12 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Radio, Sparkles, Zap, ArrowRight, Target, Gauge, History } from "lucide-react";
+import { Radio, Sparkles, Zap, ArrowRight, Target, Gauge } from "lucide-react";
 import logo from "@/assets/badchess-logo.png.asset.json";
 import proBoard from "@/assets/badchess-pro-review-board.png.asset.json";
 
 const proFeatures = [
   { icon: Target, text: "Arrows and highlights show the stronger move on the board." },
   { icon: Gauge, text: "Choose how deep the engine looks." },
-  { icon: History, text: "Works on games you've already finished, never during play." },
 ];
 
 export const Route = createFileRoute("/")({
